@@ -1,31 +1,42 @@
-# Django Blog — Session 3 & 4
+# Django Blog Project
 
-A clean Django blog project matching the practical work covered in sessions 3 and 4.
+این پروژه یک وبلاگ ساده با Django است که به عنوان تمرین جلسات آموزشی Django ساخته شده است.
 
-## Features
-- Django project + `blog` app
-- `Post` model with draft/published status
-- custom manager for published posts
-- Django Admin configuration
-- post list page
-- post detail page using slug
-- shared `base.html`
-- basic static CSS
+## امکانات پروژه
 
-## Run
+- ساخت مدل `Post`
+- وضعیت پست‌ها به صورت `Draft` و `Published`
+- مدیریت پست‌ها از طریق Django Admin
+- نمایش لیست پست‌های منتشرشده
+- نمایش صفحه جزئیات هر پست
+- استفاده از `slug` در URL
+- استفاده از Template Inheritance
+- استفاده از Static Files و CSS
+- ایجاد Migration برای مدل‌ها
+- استفاده از Custom Manager برای پست‌های منتشرشده
 
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
-```
+## ساختار کلی پروژه
 
-Open:
-- Blog: http://127.0.0.1:8000/
-- Admin: http://127.0.0.1:8000/admin/
-
-Create a few posts in Admin. Set their status to `Published` to make them appear on the blog.
+```text
+Django_Blog_Project
+│
+├── blog
+│   ├── migrations
+│   ├── static
+│   ├── templates
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── weblog
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── manage.py
+├── requirements.txt
+├── .gitignore
+└── README.md
