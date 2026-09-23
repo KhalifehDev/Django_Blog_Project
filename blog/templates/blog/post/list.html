@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block title %}پست‌ها{% endblock %}
+
+{% block content %}
+<h1>آخرین پست‌ها</h1>
+
+{% for post in posts %}
+<article class="post-card">
+    <h2>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </h2>
+
+    <p class="meta">
+        منتشر شده در {{ post.publish }} توسط {{ post.author }}
+    </p>
+
+    <p>{{ post.body|truncatewords:30|linebreaks }}</p>
+
+    <a class="read-more" href="{{ post.get_absolute_url }}">ادامه مطلب</a>
+</article>
+{% empty %}
+<p>هنوز پست منتشرشده‌ای وجود ندارد.</p>
+{% endfor %}
+{% endblock %}

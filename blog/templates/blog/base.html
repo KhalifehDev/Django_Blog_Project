@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}وبلاگ جنگو{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="{% url 'blog:post_list' %}">وبلاگ من</a>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
